@@ -439,6 +439,7 @@ function App() {
   const [appscClicked, setAppscClicked] = useState(false);
   const [group2Clicked, setGroup2Clicked] = useState(false);
   const [activeDay, setActiveDay] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const whatsappText = encodeURIComponent(
     "Hello Vibhillion AI, I need information about APPSC Group-II mock tests."
@@ -473,7 +474,25 @@ function App() {
 
         </div>
 
-        <nav className="main-nav">
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          className={menuOpen ? "main-nav is-open" : "main-nav"}
+          id="primary-navigation"
+          aria-label="Primary navigation"
+          onClick={() => setMenuOpen(false)}
+        >
 
           {/* Only APPSC has an onClick */}
 
