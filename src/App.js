@@ -467,7 +467,7 @@ function App() {
           </div>
 
           <div>
-            <h2>VibhillionAI</h2>
+            <h2>VibhillionGroupAI</h2>
             <span>Exam Roadmaps</span>
           </div>
 
