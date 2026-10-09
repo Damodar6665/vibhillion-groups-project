@@ -958,7 +958,7 @@ function App() {
 
           {/* DAILY TIMETABLE */}
 
-          <section className="section">
+          <section id="daily-timetable" className="section">
 
             <div className="section-title">
 
@@ -979,7 +979,12 @@ function App() {
             </div>
 
 
-            <div className="table-wrapper">
+            <div
+              className="table-wrapper timetable-wrapper"
+              role="region"
+              aria-label="Daily preparation timetable"
+              tabIndex="0"
+            >
 
               <table>
 
@@ -1002,15 +1007,21 @@ function App() {
                       <tr key={index}>
 
                         <td>
-                          {row[0]}
+                          <span className="timetable-time">
+                            {row[0]}
+                          </span>
                         </td>
 
                         <td>
-                          {row[1]}
+                          <span className="timetable-subject">
+                            {row[1]}
+                          </span>
                         </td>
 
                         <td>
-                          {row[2]}
+                          <span className="timetable-activity">
+                            {row[2]}
+                          </span>
                         </td>
 
                       </tr>
@@ -1040,12 +1051,14 @@ function App() {
               <h2>
                 Ready to test
                 <br />
-                your preparation?
+                <span>your preparation?</span>
               </h2>
 
               <p>
                 Practice competitive exams with
-                Vibhillion AI using mock tests,
+                {" "}
+                <span className="test-brand-name">Vibhillion AI</span>
+                {" "}using mock tests,
                 practice mode and other preparation
                 features.
               </p>
